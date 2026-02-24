@@ -1,0 +1,271 @@
+[
+  {
+    "id": 1,
+    "name": "Name Poem",
+    "occasion": "Pre wed 1",
+    "type": "fold",
+    "opens": "right",
+    "coverImage": "/src/assets/cards/01Cover.jpeg",
+    "rightImage": "/src/assets/cards/01Right.jpeg"
+  },
+  {
+    "id": 2,
+    "name": "אשת חיל ",
+    "occasion": "Pre wed 2",
+    "type": "fold",
+    "opens": "left",
+    "coverImage": "/src/assets/cards/02Cover.jpeg",
+    "leftImage": "/src/assets/cards/02Left.jpeg",
+    "rightImage": "/src/assets/cards/02Right.jpeg"
+  },
+  {
+    "id": 3,
+    "name": "I See You Everywhere",
+    "occasion": "Pre wed 3",
+    "type": "fold",
+    "opens": "left",
+    "coverImage": "/src/assets/cards/03Cover.jpeg",
+    "leftImage": "/src/assets/cards/03Left.jpeg",
+    "rightImage": "/src/assets/cards/03Right.jpeg"
+  },
+  {
+    "id": 4,
+    "name": "My Heart Is Where You Are",
+    "occasion": "Pre wed 4",
+    "type": "fold",
+    "opens": "left",
+    "coverImage": "/src/assets/cards/04Cover.jpeg",
+    "leftImage": "/src/assets/cards/04Left.jpeg",
+    "rightImage": "/src/assets/cards/04Right.jpeg"
+  },
+  {
+    "id": 5,
+    "name": "You're My Oxygen",
+    "occasion": "Pre wed 5",
+    "type": "fold",
+    "opens": "left",
+    "coverImage": "/src/assets/cards/05Cover.jpeg",
+    "leftImage": "/src/assets/cards/05Left.jpeg",
+    "rightImage": "/src/assets/cards/05Right.jpeg"
+  },
+
+  {
+    "id": 8,
+    "name": "Wedding Poem",
+    "occasion": "Wedding",
+    "type": "fold",
+    "opens": "left",
+    "coverImage": "/src/assets/cards/08Cover.jpeg",
+    "leftImage": "/src/assets/cards/08Left.jpeg",
+    "rightImage": "/src/assets/cards/08Right.jpeg"
+  },
+  {
+    "id": 9,
+    "name": "Thank You",
+    "occasion": "Wedding (post)",
+    "type": "fold",
+    "opens": "right",
+    "coverImage": "/src/assets/cards/09Cover.jpeg",
+    "leftImage": "/src/assets/cards/09Left.jpeg",
+    "rightImage": "/src/assets/cards/09Right.jpeg"
+  },
+  {
+    "id": 10,
+    "name": "Happy Birthday",
+    "occasion": "21nd Birthday",
+    "type": "fold",
+    "opens": "left",
+    "coverImage": "/src/assets/cards/10Cover.jpeg",
+    "leftImage": "/src/assets/cards/10Left.jpeg",
+    "rightImage": "/src/assets/cards/10Right.jpeg"
+  },
+  {
+    "id": 11,
+     "name": "Happy Anniversary",
+    "occasion": "1st Anniversary",
+    "type": "fold",
+    "opens": "left",
+    "coverImage": "/src/assets/cards/11Cover.jpeg",
+    "leftImage": "/src/assets/cards/11Left.jpeg",
+    "rightImage": "/src/assets/cards/11Right.jpeg"
+  },
+  {
+    "id": 12,
+    "name": "Sail",
+    "occasion": "22nd Birthday",
+    "type": "fold",
+    "opens": "left",
+    "coverImage": "/src/assets/cards/12Cover.jpeg",
+    "leftImage": "/src/assets/cards/12Left.jpeg",
+    "rightImage": "/src/assets/cards/12Right.jpeg"
+  },
+  {
+    "id": 13,
+    "name": "Friends",
+    "occasion": "Chanukah",
+    "type": "fold",
+    "opens": "left",
+    "coverImage": "/src/assets/cards/13Cover.jpeg",
+    "leftImage": "/src/assets/cards/13Left.jpeg",
+    "rightImage": "/src/assets/cards/13Right.jpeg"
+  },
+  {
+    "id": 14,
+    "name": "Once Upon A Time",
+    "occasion": "2nd Anniversary",
+    "type": "fold_down",
+    "opens": "left",
+    "coverImage": "/src/assets/cards/14Cover.jpeg",
+    "leftImage": "/src/assets/cards/14Left.jpeg",
+    "rightImage": "/src/assets/cards/14Right.jpeg"
+  },
+  {
+    "id": 15,
+    "name": "Belong",
+    "occasion": "23rd Birthday",
+    "type": "fold",
+    "opens": "right",
+    "coverImage": "/src/assets/cards/15Cover.jpeg",
+    "leftImage": "/src/assets/cards/15Left.jpeg",
+    "rightImage": "/src/assets/cards/15Right.jpeg"
+  },
+  {
+    "id": 16,
+    "name": "Favorite",
+    "occasion": "3rd Anniversary",
+    "type": "fold",
+    "opens": "right",
+    "coverImage": "/src/assets/cards/16Cover.png",
+    "leftImage": "/src/assets/cards/16Left.jpeg",
+    "rightImage": "/src/assets/cards/16Right.jpeg"
+  },
+  {
+    "id": 17,
+    "name": "What You Are To Me",
+    "occasion": "24th Birthday",
+    "type": "fold",
+    "opens": "left",
+    "coverImage": "/src/assets/cards/17Cover.jpeg",
+    "leftImage": "/src/assets/cards/17Left.jpeg",
+    "rightImage": "/src/assets/cards/17Right.jpeg"
+  },
+  {
+    "id": 18,
+    "name": "I Could Never Imagine",
+    "occasion": "4th Anniversary",
+    "type": "fold",
+    "opens": "left",
+    "coverImage": "/src/assets/cards/18Cover.jpeg",
+    "leftImage": "/src/assets/cards/18Left.jpeg",
+    "rightImage": "/src/assets/cards/18Right.jpeg"
+  },
+  {
+    "id": 19,
+    "name": "For All You Are",
+    "occasion": "25th Birthday",
+    "type": "fold",
+    "opens": "left",
+    "coverImage": "/src/assets/cards/19Cover.jpeg",
+    "leftImage": "/src/assets/cards/19Left.jpeg",
+    "rightImage": "/src/assets/cards/19Right.jpeg"
+  },
+  {
+    "id": 20,
+    "name": "Quarentine",
+    "occasion": "5th Anniversary",
+    "type": "fold",
+    "opens": "left",
+    "coverImage": "/src/assets/cards/20Cover.jpeg",
+    "leftImage": "/src/assets/cards/20Left.jpeg",
+    "rightImage": "/src/assets/cards/20Right.jpeg"
+  },
+  {
+    "id": 21,
+    "name": "So Close and Yet So Far",
+    "type": "fold",
+    "opens": "left",
+    "coverImage": "/src/assets/cards/21Cover.jpeg",
+    "leftImage": "/src/assets/cards/21Left.jpeg",
+    "rightImage": "/src/assets/cards/21Right.jpeg"
+  },
+  {
+    "id": 22,
+    "name": "Our Story",
+    "occasion": "26th Birthday",
+    "type": "fold_down",
+    "opens": "left",
+    "coverImage": "/src/assets/cards/22Cover.jpeg",
+    "leftImage": "/src/assets/cards/22Left.jpeg",
+    "rightImage": "/src/assets/cards/22Right.jpeg"
+  },
+  {
+    "id": 23,
+    "name": "Best Friends",
+    "occasion": "27th Birthday",
+    "type": "fold",
+    "opens": "left",
+    "coverImage": "/src/assets/cards/23Cover.jpeg",
+    "leftImage": "/src/assets/cards/23Left.jpeg",
+    "rightImage": "/src/assets/cards/23Right.jpeg"
+  },
+  {
+    "id": 24,
+    "name": "Birds of a Feather",
+    "occasion": "7th Anniversary",
+    "type": "popup",
+    "opens": "left",
+    "coverImage": "/src/assets/cards/24Cover.jpeg",
+    "leftImage": "/src/assets/cards/24Left.png",
+    "rightImage": "/src/assets/cards/24Right.jpeg"
+  },
+  {
+    "id": 25,
+    "name": "Symphony",
+    "occasion": "28th Birthday",
+    "type": "fold",
+    "opens": "left",
+    "coverImage": "/src/assets/cards/25Cover.jpeg",
+    "leftImage": "/src/assets/cards/25Left.jpeg",
+    "rightImage": "/src/assets/cards/25Right.jpeg"
+  },
+  {
+    "id": 26,
+    "name": "Garden",
+    "occasion": "8th Anniversary",
+    "type": "popup",
+    "opens": "left",
+    "coverImage": "/src/assets/cards/26Cover.jpeg",
+    "leftImage": "/src/assets/cards/26Left.png",
+    "rightImage": "/src/assets/cards/26Right.jpeg"
+  },
+  {
+    "id": 27,
+    "name": "Mind, Heart, Body, Soul",
+    "occasion": "29th Birthday",
+    "type": "popup",
+    "opens": "left",
+    "coverImage": "/src/assets/cards/27Cover.jpeg",
+    "leftImage": "/src/assets/cards/27Left.png",
+    "rightImage": "/src/assets/cards/27Right.jpeg"
+  },
+  {
+    "id": 28,
+    "name": "Water",
+    "occasion": "9th Anniversary",
+    "type": "popup",
+    "opens": "left",
+    "coverImage": "/src/assets/cards/28Cover.jpeg",
+    "leftImage": "/src/assets/cards/28Left.png",
+    "rightImage": "/src/assets/cards/28Right.jpeg"
+  },
+  {
+    "id": 29,
+    "name": "Mac & Cheese",
+    "occasion": "30th Birthday",
+    "type": "popup",
+    "opens": "left",
+    "coverImage": "/src/assets/cards/29Cover.jpeg",
+    "leftImage": "/src/assets/cards/29Left.png",
+    "rightImage": "/src/assets/cards/29Right.jpeg"
+  }
+]
