@@ -15,6 +15,7 @@ const cardsData = rawCardsData.map(card => ({
 const CARD_WIDTH = 200
 const CARD_GAP = 20
 const CARD_SPACING = CARD_WIDTH + CARD_GAP
+const SWIPE_THRESHOLD = 50
 const PASSCODE = 'Eliana'
 
 function getCookie(name) {
@@ -37,14 +38,10 @@ function App() {
     return !isNaN(parsed) && parsed >= 0 && parsed < cardsData.length ? parsed : Math.floor(cardsData.length / 2)
   })
   const [openCardId, setOpenCardId] = useState(null)
-  const [dragOffset, setDragOffset] = useState(0)
-  const [isDragging, setIsDragging] = useState(false)
-  const [hasDragged, setHasDragged] = useState(false)
+  const [hasSwiped, setHasSwiped] = useState(false)
 
-  const dragStartX = useRef(0)
-  const activeIndexRef = useRef(activeIndex)
-
-  activeIndexRef.current = activeIndex
+  const swipeStartX = useRef(0)
+  const swipeHandled = useRef(false)
 
   useEffect(() => {
     setCookie('cards_index', activeIndex.toString())
@@ -62,7 +59,7 @@ function App() {
   }
 
   const handleCardClick = (cardId, index) => {
-    if (hasDragged) return
+    if (hasSwiped) return
 
     if (openCardId === cardId) {
       setOpenCardId(null)
@@ -88,65 +85,60 @@ function App() {
     })
   }, [openCardId])
 
-  const handleDragStart = (clientX) => {
+  const handleSwipeStart = (clientX) => {
     if (openCardId !== null) return
-    setIsDragging(true)
-    setHasDragged(false)
-    dragStartX.current = clientX
+    swipeStartX.current = clientX
+    swipeHandled.current = false
+    setHasSwiped(false)
   }
 
-  const handleDragMove = (clientX) => {
-    if (!isDragging || openCardId !== null) return
+  const handleSwipeMove = (clientX) => {
+    if (openCardId !== null || swipeHandled.current) return
 
-    const diff = clientX - dragStartX.current
+    const diff = clientX - swipeStartX.current
 
-    if (Math.abs(diff) > 5) {
-      setHasDragged(true)
+    if (Math.abs(diff) > SWIPE_THRESHOLD) {
+      swipeHandled.current = true
+      setHasSwiped(true)
+
+      if (diff > 0) {
+        navigateCards(-1)
+      } else {
+        navigateCards(1)
+      }
     }
-
-    setDragOffset(diff)
   }
 
-  const handleDragEnd = () => {
-    if (!isDragging) return
-
-    const cardShift = Math.round(-dragOffset / CARD_SPACING)
-    const newIndex = Math.max(0, Math.min(cardsData.length - 1, activeIndex + cardShift))
-
-    setActiveIndex(newIndex)
-    setIsDragging(false)
-    setDragOffset(0)
-    setTimeout(() => setHasDragged(false), 50)
+  const handleSwipeEnd = () => {
+    setTimeout(() => setHasSwiped(false), 100)
   }
 
   const handleMouseDown = (e) => {
-    handleDragStart(e.clientX)
+    handleSwipeStart(e.clientX)
   }
 
   const handleMouseMove = (e) => {
-    handleDragMove(e.clientX)
+    handleSwipeMove(e.clientX)
   }
 
   const handleMouseUp = () => {
-    handleDragEnd()
+    handleSwipeEnd()
   }
 
   const handleMouseLeave = () => {
-    if (isDragging) {
-      handleDragEnd()
-    }
+    handleSwipeEnd()
   }
 
   const handleTouchStart = (e) => {
-    handleDragStart(e.touches[0].clientX)
+    handleSwipeStart(e.touches[0].clientX)
   }
 
   const handleTouchMove = (e) => {
-    handleDragMove(e.touches[0].clientX)
+    handleSwipeMove(e.touches[0].clientX)
   }
 
   const handleTouchEnd = () => {
-    handleDragEnd()
+    handleSwipeEnd()
   }
 
   useEffect(() => {
@@ -195,12 +187,8 @@ function App() {
     <div className="app">
       <div className={`vignette ${openCardId !== null ? 'card-open' : ''}`} />
 
-      {/* {openCardId !== null && (
-        <div className="card-overlay" onClick={handleClose} />
-      )} */}
-
       <div
-        className={`carousel ${openCardId !== null ? 'card-open' : ''} ${isDragging ? 'dragging' : ''}`}
+        className={`carousel ${openCardId !== null ? 'card-open' : ''}`}
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
@@ -214,6 +202,11 @@ function App() {
             const offset = index - activeIndex
             const isOpen = openCardId === card.id
             const isHidden = openCardId !== null && openCardId !== card.id
+            const isInRange = Math.abs(offset) <= 3
+
+            if (!isInRange && !isOpen) {
+              return null
+            }
 
             return (
               <Card
@@ -223,7 +216,6 @@ function App() {
                 isOpen={isOpen}
                 isHidden={isHidden}
                 cardSpacing={CARD_SPACING}
-                dragOffset={dragOffset}
                 onClick={() => handleCardClick(card.id, index)}
                 onClose={handleClose}
               />
@@ -236,12 +228,6 @@ function App() {
         <h2>{activeCard.name}</h2>
         {activeCard.occasion && <p className="card-occasion">{activeCard.occasion}</p>}
       </div>
-
-      {/* {openCardId === null && (
-        <div className="navigation-hint">
-          <span>← →</span> Navigate | <span>Click</span> or <span>Swipe</span>
-        </div>
-      )} */}
     </div>
   )
 }

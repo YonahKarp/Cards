@@ -5,8 +5,7 @@ $transition-timing: cubic-bezier(0.25, 0.1, 0.25, 1);
 .card-container {
   position: absolute;
   cursor: pointer;
-  transform-style: preserve-3d;
-  transition: transform 0.5s $transition-timing, opacity 0.4s ease, width 0.3s $transition-timing, height 0.3s $transition-timing;
+  transition: transform 0.5s $transition-timing, opacity 0.4s ease, width 0.3s $transition-timing, height 0.3s $transition-timing, z-index 0s;
   will-change: transform;
   max-width: 100vw;
   width: var(--width);
@@ -41,7 +40,7 @@ $transition-timing: cubic-bezier(0.25, 0.1, 0.25, 1);
   }
 
   &.active {
-    z-index: 100;
+    z-index: 100 !important;
     .card-inner .card-cover {
       box-shadow:
         0 25px 50px rgba(0, 0, 0, 0.5),
@@ -49,29 +48,37 @@ $transition-timing: cubic-bezier(0.25, 0.1, 0.25, 1);
     }
   }
 
+  &.open {
+    z-index: 200 !important;
+  }
+
   // Fold card open state
-  &.fold.open {
-    cursor: grab;
+  &.fold {
+    transform-style: preserve-3d;
 
-    &.panning {
-      cursor: grabbing;
-    }
+    &.open {
+      cursor: grab;
 
-    .card-inner {
-      .card-cover {
-        transform: rotateY(-180deg);
-        box-shadow:
-          -10px 10px 30px rgba(0, 0, 0, 0.4),
-          0 0 80px rgba(255, 255, 255, 0.15);
+      &.panning {
+        cursor: grabbing;
       }
 
-      .card-left {
-        opacity: 1;
-        transform: rotateY(-180deg);
-      }
+      .card-inner {
+        .card-cover {
+          transform: rotateY(-180deg);
+          box-shadow:
+            -10px 10px 30px rgba(0, 0, 0, 0.4),
+            0 0 80px rgba(255, 255, 255, 0.15);
+        }
 
-      .card-right {
-        opacity: 1;
+        .card-left {
+          opacity: 1;
+          transform: rotateY(-180deg);
+        }
+
+        .card-right {
+          opacity: 1;
+        }
       }
     }
   }
@@ -118,25 +125,29 @@ $transition-timing: cubic-bezier(0.25, 0.1, 0.25, 1);
   }
 
   // Fold-down card open state (vertical fold)
-  &.fold-down.open {
-    cursor: default;
+  &.fold-down {
+    transform-style: preserve-3d;
 
-    .card-inner {
-      .card-cover {
-        transform: rotateX(180deg);
-        transform-origin: top center;
-        box-shadow:
-          0 -10px 30px rgba(0, 0, 0, 0.4),
-          0 0 80px rgba(255, 255, 255, 0.15);
-      }
+    &.open {
+      cursor: default;
 
-      .card-top {
-        opacity: 1;
-        transform: rotateX(180deg);
-      }
+      .card-inner {
+        .card-cover {
+          transform: rotateX(180deg);
+          transform-origin: top center;
+          box-shadow:
+            0 -10px 30px rgba(0, 0, 0, 0.4),
+            0 0 80px rgba(255, 255, 255, 0.15);
+        }
 
-      .card-bottom {
-        opacity: 1;
+        .card-top {
+          opacity: 1;
+          transform: rotateX(180deg);
+        }
+
+        .card-bottom {
+          opacity: 1;
+        }
       }
     }
   }
@@ -399,6 +410,10 @@ $transition-timing: cubic-bezier(0.25, 0.1, 0.25, 1);
   .card-cover {
     transform-origin: bottom center;
     transition: transform 0.6s $transition-timing, box-shadow 0.5s ease;
+  }
+
+  &.open {
+    transform-style: flat;
   }
 }
 

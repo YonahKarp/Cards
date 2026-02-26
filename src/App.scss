@@ -75,6 +75,8 @@ body {
   position: relative;
   cursor: grab;
   user-select: none;
+  touch-action: pan-y pinch-zoom;
+  -webkit-user-select: none;
 
   &.dragging {
     cursor: grabbing;

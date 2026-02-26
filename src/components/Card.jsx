@@ -5,7 +5,7 @@ import './Card.scss'
 const CARD_HEIGHT = 500
 const CLOSE_ANIMATION_DURATION = 800
 
-function Card({ card, offset, isOpen, isHidden, cardSpacing, dragOffset, onClick, onClose }) {
+function Card({ card, offset, isOpen, isHidden, cardSpacing, onClick, onClose }) {
   const isPopup = card.type === 'popup'
   const isNoOpen = card.type === 'no_open'
   const isFoldDown = card.type === 'fold_down'
@@ -134,7 +134,7 @@ function Card({ card, offset, isOpen, isHidden, cardSpacing, dragOffset, onClick
     }
   }, [isOpen, isFold, leftSize.width, rightSize.width, card.opens])
 
-  // Block system zoom when card is open (for fold cards)
+  // Block system zoom when card is open (for fold cards) - desktop only
   useEffect(() => {
     if (!isOpen || !isFold) return
 
@@ -144,20 +144,10 @@ function Card({ card, offset, isOpen, isHidden, cardSpacing, dragOffset, onClick
       }
     }
 
-    const preventGestureZoom = (e) => {
-      e.preventDefault()
-    }
-
     document.addEventListener('wheel', preventZoom, { passive: false })
-    document.addEventListener('gesturestart', preventGestureZoom)
-    document.addEventListener('gesturechange', preventGestureZoom)
-    document.addEventListener('gestureend', preventGestureZoom)
 
     return () => {
       document.removeEventListener('wheel', preventZoom)
-      document.removeEventListener('gesturestart', preventGestureZoom)
-      document.removeEventListener('gesturechange', preventGestureZoom)
-      document.removeEventListener('gestureend', preventGestureZoom)
     }
   }, [isOpen, isFold])
 
@@ -251,27 +241,18 @@ function Card({ card, offset, isOpen, isHidden, cardSpacing, dragOffset, onClick
   const handleTouchMove = useCallback((e) => {
     if (!isOpen || !isFold) return
 
-    if (e.touches.length === 2) {
-      // Pinch zoom
-      e.preventDefault()
+    if (e.touches.length === 2 && lastPinchDistanceRef.current !== null) {
       const distance = Math.hypot(
         e.touches[0].clientX - e.touches[1].clientX,
         e.touches[0].clientY - e.touches[1].clientY
       )
 
-      if (lastPinchDistanceRef.current !== null) {
-        const delta = distance - lastPinchDistanceRef.current
-        const zoomDelta = delta * 0.01
+      const delta = distance - lastPinchDistanceRef.current
+      const zoomDelta = delta * 0.01
 
-        setZoomLevel(prev => {
-          const newZoom = Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, prev + zoomDelta))
-          return newZoom
-        })
-      }
-
+      setZoomLevel(prev => Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, prev + zoomDelta)))
       lastPinchDistanceRef.current = distance
     } else if (e.touches.length === 1 && isPanning) {
-      e.preventDefault()
       handlePanMove(e.touches[0].clientX, e.touches[0].clientY)
     }
   }, [isOpen, isFold, isPanning, handlePanMove])
@@ -299,18 +280,18 @@ function Card({ card, offset, isOpen, isHidden, cardSpacing, dragOffset, onClick
 
   // Global mouse/touch listeners when panning
   useEffect(() => {
-    if (isPanning) {
-      window.addEventListener('mousemove', handleMouseMove)
-      window.addEventListener('mouseup', handleMouseUp)
-      window.addEventListener('touchmove', handleTouchMove, { passive: false })
-      window.addEventListener('touchend', handleTouchEnd)
+    if (!isPanning) return
 
-      return () => {
-        window.removeEventListener('mousemove', handleMouseMove)
-        window.removeEventListener('mouseup', handleMouseUp)
-        window.removeEventListener('touchmove', handleTouchMove)
-        window.removeEventListener('touchend', handleTouchEnd)
-      }
+    window.addEventListener('mousemove', handleMouseMove)
+    window.addEventListener('mouseup', handleMouseUp)
+    window.addEventListener('touchmove', handleTouchMove)
+    window.addEventListener('touchend', handleTouchEnd)
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove)
+      window.removeEventListener('mouseup', handleMouseUp)
+      window.removeEventListener('touchmove', handleTouchMove)
+      window.removeEventListener('touchend', handleTouchEnd)
     }
   }, [isPanning, handleMouseMove, handleMouseUp, handleTouchMove, handleTouchEnd])
 
@@ -325,48 +306,36 @@ function Card({ card, offset, isOpen, isHidden, cardSpacing, dragOffset, onClick
 
   const getTransform = () => {
     if (isOpen) {
-      // For no_open type, just zoom in without opening
       if (isNoOpen) {
-        return `translateX(0px) rotateY(0deg) scale(1.4)`
+        return `translateX(0px) scale(1.4)`
       }
       if (isPopup) {
-        return `translateX(0px) rotateY(0deg) scale(1)`
+        return `translateX(0px) scale(1)`
       }
       if (isFoldDown) {
-        // For fold_down cards: center vertically
-        // Top panel flips up above the card, so translate down to center
         const centerOffset = leftSize.height / 2
-        return `translateY(${centerOffset}px) rotateY(0deg) scale(1)`
+        return `translateY(${centerOffset}px) scale(1)`
       }
-      // For fold cards: center based on total opened width (left + right)
-      // Left panel extends to the left, right panel is revealed in place
-      // We need to offset by: (leftWidth - rightWidth) / 2 to center the whole thing
-      // But also account for the cover width vs right panel width difference
       const totalOpenedWidth = leftSize.width + rightSize.width
       const centerOffset = (totalOpenedWidth - rightSize.width) / 2
-      // Add panOffset for panning and zoomLevel for zoom
-      return `translate(${centerOffset + panOffset.x}px, ${panOffset.y}px) rotateY(0deg) scale(${zoomLevel})`
+      return `translate(${centerOffset + panOffset.x}px, ${panOffset.y}px) scale(${zoomLevel})`
     }
 
     if (isHidden) {
       const direction = offset < 0 ? -1 : 1
-      return `translateX(${direction * 150}vw) rotateY(0deg) scale(0.8)`
+      return `translateX(${direction * 150}vw) scale(0.8)`
     }
 
-    const visualOffset = offset + (dragOffset / cardSpacing)
+    const baseTranslateX = offset * cardSpacing
+    const rotateY = offset * -45
+    const scale = 1 - Math.abs(offset) * 0.1
 
-    const baseTranslateX = offset * cardSpacing + dragOffset
-    const rotateY = visualOffset * -45
-    const translateZ = Math.abs(visualOffset) * -100
-    const scale = 1 //Math.max(0.7, 1 - Math.abs(visualOffset) * 0.15)
-
-    return `translateX(${baseTranslateX}px) translateZ(${translateZ}px) rotateY(${rotateY}deg) scale(${scale})`
+    return `translateX(${baseTranslateX}px) rotateY(${rotateY}deg) scale(${scale})`
   }
 
   const getZIndex = () => {
     if (isOpen) return 100
-    const visualOffset = offset + (dragOffset / cardSpacing)
-    return Math.round(50 - Math.abs(visualOffset) * 10)
+    return Math.round(50 - Math.abs(offset) * 10)
   }
 
   const handleClick = (e) => {
@@ -386,8 +355,7 @@ function Card({ card, offset, isOpen, isHidden, cardSpacing, dragOffset, onClick
     }
   }
 
-  const visualOffset = offset + (dragOffset / cardSpacing)
-  const isVisuallyActive = Math.abs(visualOffset) < 0.5
+  const isVisuallyActive = Math.abs(offset) < 0.5
 
   const cardTypeClass = isNoOpen ? 'no-open' : isPopup ? 'popup' : isFoldDown ? 'fold-down' : 'fold'
 
@@ -476,7 +444,6 @@ Card.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   isHidden: PropTypes.bool.isRequired,
   cardSpacing: PropTypes.number.isRequired,
-  dragOffset: PropTypes.number.isRequired,
   onClick: PropTypes.func.isRequired,
   onClose: PropTypes.func.isRequired,
 }
