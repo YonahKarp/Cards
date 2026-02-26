@@ -1,7 +1,16 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 import Card from './components/Card'
-import cardsData from './data/cards.json'
+import rawCardsData from './data/cards.json'
 import './App.scss'
+
+const BASE_URL = import.meta.env.BASE_URL
+
+const cardsData = rawCardsData.map(card => ({
+  ...card,
+  coverImage: BASE_URL + card.coverImage.slice(1),
+  leftImage: card.leftImage ? BASE_URL + card.leftImage.slice(1) : undefined,
+  rightImage: card.rightImage ? BASE_URL + card.rightImage.slice(1) : undefined,
+}))
 
 const CARD_WIDTH = 200
 const CARD_GAP = 20
