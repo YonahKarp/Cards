@@ -5,8 +5,8 @@
     "occasion": "Pre wed 1",
     "type": "fold",
     "opens": "right",
-    "coverImage": "/src/assets/cards/01Cover.jpeg",
-    "rightImage": "/src/assets/cards/01Right.jpeg"
+    "coverImage": "/cards/01Cover.jpeg",
+    "rightImage": "/cards/01Right.jpeg"
   },
   {
     "id": 2,
@@ -14,9 +14,9 @@
     "occasion": "Pre wed 2",
     "type": "fold",
     "opens": "left",
-    "coverImage": "/src/assets/cards/02Cover.jpeg",
-    "leftImage": "/src/assets/cards/02Left.jpeg",
-    "rightImage": "/src/assets/cards/02Right.jpeg"
+    "coverImage": "/cards/02Cover.jpeg",
+    "leftImage": "/cards/02Left.jpeg",
+    "rightImage": "/cards/02Right.jpeg"
   },
   {
     "id": 3,
@@ -24,9 +24,9 @@
     "occasion": "Pre wed 3",
     "type": "fold",
     "opens": "left",
-    "coverImage": "/src/assets/cards/03Cover.jpeg",
-    "leftImage": "/src/assets/cards/03Left.jpeg",
-    "rightImage": "/src/assets/cards/03Right.jpeg"
+    "coverImage": "/cards/03Cover.jpeg",
+    "leftImage": "/cards/03Left.jpeg",
+    "rightImage": "/cards/03Right.jpeg"
   },
   {
     "id": 4,
@@ -34,9 +34,9 @@
     "occasion": "Pre wed 4",
     "type": "fold",
     "opens": "left",
-    "coverImage": "/src/assets/cards/04Cover.jpeg",
-    "leftImage": "/src/assets/cards/04Left.jpeg",
-    "rightImage": "/src/assets/cards/04Right.jpeg"
+    "coverImage": "/cards/04Cover.jpeg",
+    "leftImage": "/cards/04Left.jpeg",
+    "rightImage": "/cards/04Right.jpeg"
   },
   {
     "id": 5,
@@ -44,9 +44,9 @@
     "occasion": "Pre wed 5",
     "type": "fold",
     "opens": "left",
-    "coverImage": "/src/assets/cards/05Cover.jpeg",
-    "leftImage": "/src/assets/cards/05Left.jpeg",
-    "rightImage": "/src/assets/cards/05Right.jpeg"
+    "coverImage": "/cards/05Cover.jpeg",
+    "leftImage": "/cards/05Left.jpeg",
+    "rightImage": "/cards/05Right.jpeg"
   },
 
   {
@@ -55,9 +55,9 @@
     "occasion": "Wedding",
     "type": "fold",
     "opens": "left",
-    "coverImage": "/src/assets/cards/08Cover.jpeg",
-    "leftImage": "/src/assets/cards/08Left.jpeg",
-    "rightImage": "/src/assets/cards/08Right.jpeg"
+    "coverImage": "/cards/08Cover.jpeg",
+    "leftImage": "/cards/08Left.jpeg",
+    "rightImage": "/cards/08Right.jpeg"
   },
   {
     "id": 9,
@@ -65,9 +65,9 @@
     "occasion": "Wedding (post)",
     "type": "fold",
     "opens": "right",
-    "coverImage": "/src/assets/cards/09Cover.jpeg",
-    "leftImage": "/src/assets/cards/09Left.jpeg",
-    "rightImage": "/src/assets/cards/09Right.jpeg"
+    "coverImage": "/cards/09Cover.jpeg",
+    "leftImage": "/cards/09Left.jpeg",
+    "rightImage": "/cards/09Right.jpeg"
   },
   {
     "id": 10,
@@ -75,9 +75,9 @@
     "occasion": "21nd Birthday",
     "type": "fold",
     "opens": "left",
-    "coverImage": "/src/assets/cards/10Cover.jpeg",
-    "leftImage": "/src/assets/cards/10Left.jpeg",
-    "rightImage": "/src/assets/cards/10Right.jpeg"
+    "coverImage": "/cards/10Cover.jpeg",
+    "leftImage": "/cards/10Left.jpeg",
+    "rightImage": "/cards/10Right.jpeg"
   },
   {
     "id": 11,
@@ -85,9 +85,9 @@
     "occasion": "1st Anniversary",
     "type": "fold",
     "opens": "left",
-    "coverImage": "/src/assets/cards/11Cover.jpeg",
-    "leftImage": "/src/assets/cards/11Left.jpeg",
-    "rightImage": "/src/assets/cards/11Right.jpeg"
+    "coverImage": "/cards/11Cover.jpeg",
+    "leftImage": "/cards/11Left.jpeg",
+    "rightImage": "/cards/11Right.jpeg"
   },
   {
     "id": 12,
@@ -95,9 +95,9 @@
     "occasion": "22nd Birthday",
     "type": "fold",
     "opens": "left",
-    "coverImage": "/src/assets/cards/12Cover.jpeg",
-    "leftImage": "/src/assets/cards/12Left.jpeg",
-    "rightImage": "/src/assets/cards/12Right.jpeg"
+    "coverImage": "/cards/12Cover.jpeg",
+    "leftImage": "/cards/12Left.jpeg",
+    "rightImage": "/cards/12Right.jpeg"
   },
   {
     "id": 13,
@@ -105,9 +105,9 @@
     "occasion": "Chanukah",
     "type": "fold",
     "opens": "left",
-    "coverImage": "/src/assets/cards/13Cover.jpeg",
-    "leftImage": "/src/assets/cards/13Left.jpeg",
-    "rightImage": "/src/assets/cards/13Right.jpeg"
+    "coverImage": "/cards/13Cover.jpeg",
+    "leftImage": "/cards/13Left.jpeg",
+    "rightImage": "/cards/13Right.jpeg"
   },
   {
     "id": 14,
@@ -115,9 +115,9 @@
     "occasion": "2nd Anniversary",
     "type": "fold_down",
     "opens": "left",
-    "coverImage": "/src/assets/cards/14Cover.jpeg",
-    "leftImage": "/src/assets/cards/14Left.jpeg",
-    "rightImage": "/src/assets/cards/14Right.jpeg"
+    "coverImage": "/cards/14Cover.jpeg",
+    "leftImage": "/cards/14Left.jpeg",
+    "rightImage": "/cards/14Right.jpeg"
   },
   {
     "id": 15,
@@ -125,9 +125,9 @@
     "occasion": "23rd Birthday",
     "type": "fold",
     "opens": "right",
-    "coverImage": "/src/assets/cards/15Cover.jpeg",
-    "leftImage": "/src/assets/cards/15Left.jpeg",
-    "rightImage": "/src/assets/cards/15Right.jpeg"
+    "coverImage": "/cards/15Cover.jpeg",
+    "leftImage": "/cards/15Left.jpeg",
+    "rightImage": "/cards/15Right.jpeg"
   },
   {
     "id": 16,
@@ -135,9 +135,9 @@
     "occasion": "3rd Anniversary",
     "type": "fold",
     "opens": "right",
-    "coverImage": "/src/assets/cards/16Cover.png",
-    "leftImage": "/src/assets/cards/16Left.jpeg",
-    "rightImage": "/src/assets/cards/16Right.jpeg"
+    "coverImage": "/cards/16Cover.png",
+    "leftImage": "/cards/16Left.jpeg",
+    "rightImage": "/cards/16Right.jpeg"
   },
   {
     "id": 17,
@@ -145,9 +145,9 @@
     "occasion": "24th Birthday",
     "type": "fold",
     "opens": "left",
-    "coverImage": "/src/assets/cards/17Cover.jpeg",
-    "leftImage": "/src/assets/cards/17Left.jpeg",
-    "rightImage": "/src/assets/cards/17Right.jpeg"
+    "coverImage": "/cards/17Cover.jpeg",
+    "leftImage": "/cards/17Left.jpeg",
+    "rightImage": "/cards/17Right.jpeg"
   },
   {
     "id": 18,
@@ -155,9 +155,9 @@
     "occasion": "4th Anniversary",
     "type": "fold",
     "opens": "left",
-    "coverImage": "/src/assets/cards/18Cover.jpeg",
-    "leftImage": "/src/assets/cards/18Left.jpeg",
-    "rightImage": "/src/assets/cards/18Right.jpeg"
+    "coverImage": "/cards/18Cover.jpeg",
+    "leftImage": "/cards/18Left.jpeg",
+    "rightImage": "/cards/18Right.jpeg"
   },
   {
     "id": 19,
@@ -165,9 +165,9 @@
     "occasion": "25th Birthday",
     "type": "fold",
     "opens": "left",
-    "coverImage": "/src/assets/cards/19Cover.jpeg",
-    "leftImage": "/src/assets/cards/19Left.jpeg",
-    "rightImage": "/src/assets/cards/19Right.jpeg"
+    "coverImage": "/cards/19Cover.jpeg",
+    "leftImage": "/cards/19Left.jpeg",
+    "rightImage": "/cards/19Right.jpeg"
   },
   {
     "id": 20,
@@ -175,18 +175,18 @@
     "occasion": "5th Anniversary",
     "type": "fold",
     "opens": "left",
-    "coverImage": "/src/assets/cards/20Cover.jpeg",
-    "leftImage": "/src/assets/cards/20Left.jpeg",
-    "rightImage": "/src/assets/cards/20Right.jpeg"
+    "coverImage": "/cards/20Cover.jpeg",
+    "leftImage": "/cards/20Left.jpeg",
+    "rightImage": "/cards/20Right.jpeg"
   },
   {
     "id": 21,
     "name": "So Close and Yet So Far",
     "type": "fold",
     "opens": "left",
-    "coverImage": "/src/assets/cards/21Cover.jpeg",
-    "leftImage": "/src/assets/cards/21Left.jpeg",
-    "rightImage": "/src/assets/cards/21Right.jpeg"
+    "coverImage": "/cards/21Cover.jpeg",
+    "leftImage": "/cards/21Left.jpeg",
+    "rightImage": "/cards/21Right.jpeg"
   },
   {
     "id": 22,
@@ -194,9 +194,9 @@
     "occasion": "26th Birthday",
     "type": "fold_down",
     "opens": "left",
-    "coverImage": "/src/assets/cards/22Cover.jpeg",
-    "leftImage": "/src/assets/cards/22Left.jpeg",
-    "rightImage": "/src/assets/cards/22Right.jpeg"
+    "coverImage": "/cards/22Cover.jpeg",
+    "leftImage": "/cards/22Left.jpeg",
+    "rightImage": "/cards/22Right.jpeg"
   },
   {
     "id": 23,
@@ -204,9 +204,9 @@
     "occasion": "27th Birthday",
     "type": "fold",
     "opens": "left",
-    "coverImage": "/src/assets/cards/23Cover.jpeg",
-    "leftImage": "/src/assets/cards/23Left.jpeg",
-    "rightImage": "/src/assets/cards/23Right.jpeg"
+    "coverImage": "/cards/23Cover.jpeg",
+    "leftImage": "/cards/23Left.jpeg",
+    "rightImage": "/cards/23Right.jpeg"
   },
   {
     "id": 24,
@@ -214,9 +214,9 @@
     "occasion": "7th Anniversary",
     "type": "popup",
     "opens": "left",
-    "coverImage": "/src/assets/cards/24Cover.jpeg",
-    "leftImage": "/src/assets/cards/24Left.png",
-    "rightImage": "/src/assets/cards/24Right.jpeg"
+    "coverImage": "/cards/24Cover.jpeg",
+    "leftImage": "/cards/24Left.png",
+    "rightImage": "/cards/24Right.jpeg"
   },
   {
     "id": 25,
@@ -224,9 +224,9 @@
     "occasion": "28th Birthday",
     "type": "fold",
     "opens": "left",
-    "coverImage": "/src/assets/cards/25Cover.jpeg",
-    "leftImage": "/src/assets/cards/25Left.jpeg",
-    "rightImage": "/src/assets/cards/25Right.jpeg"
+    "coverImage": "/cards/25Cover.jpeg",
+    "leftImage": "/cards/25Left.jpeg",
+    "rightImage": "/cards/25Right.jpeg"
   },
   {
     "id": 26,
@@ -234,9 +234,9 @@
     "occasion": "8th Anniversary",
     "type": "popup",
     "opens": "left",
-    "coverImage": "/src/assets/cards/26Cover.jpeg",
-    "leftImage": "/src/assets/cards/26Left.png",
-    "rightImage": "/src/assets/cards/26Right.jpeg"
+    "coverImage": "/cards/26Cover.jpeg",
+    "leftImage": "/cards/26Left.png",
+    "rightImage": "/cards/26Right.jpeg"
   },
   {
     "id": 27,
@@ -244,9 +244,9 @@
     "occasion": "29th Birthday",
     "type": "popup",
     "opens": "left",
-    "coverImage": "/src/assets/cards/27Cover.jpeg",
-    "leftImage": "/src/assets/cards/27Left.png",
-    "rightImage": "/src/assets/cards/27Right.jpeg"
+    "coverImage": "/cards/27Cover.jpeg",
+    "leftImage": "/cards/27Left.png",
+    "rightImage": "/cards/27Right.jpeg"
   },
   {
     "id": 28,
@@ -254,9 +254,9 @@
     "occasion": "9th Anniversary",
     "type": "popup",
     "opens": "left",
-    "coverImage": "/src/assets/cards/28Cover.jpeg",
-    "leftImage": "/src/assets/cards/28Left.png",
-    "rightImage": "/src/assets/cards/28Right.jpeg"
+    "coverImage": "/cards/28Cover.jpeg",
+    "leftImage": "/cards/28Left.png",
+    "rightImage": "/cards/28Right.jpeg"
   },
   {
     "id": 29,
@@ -264,8 +264,8 @@
     "occasion": "30th Birthday",
     "type": "popup",
     "opens": "left",
-    "coverImage": "/src/assets/cards/29Cover.jpeg",
-    "leftImage": "/src/assets/cards/29Left.png",
-    "rightImage": "/src/assets/cards/29Right.jpeg"
+    "coverImage": "/cards/29Cover.jpeg",
+    "leftImage": "/cards/29Left.png",
+    "rightImage": "/cards/29Right.jpeg"
   }
 ]
