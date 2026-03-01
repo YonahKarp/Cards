@@ -267,5 +267,15 @@
     "coverImage": "/cards/29Cover.jpeg",
     "leftImage": "/cards/29Left.png",
     "rightImage": "/cards/29Right.jpeg"
+  },
+  {
+    "id": 30,
+    "name": "Threads",
+    "occasion": "10th Anniversary",
+    "type": "fold",
+    "opens": "left",
+    "coverImage": "/cards/30Cover.jpeg",
+    "leftImage": "/cards/30Left.jpeg",
+    "rightImage": "/cards/30Right.jpeg"
   }
 ]
