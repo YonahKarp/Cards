@@ -15,7 +15,7 @@ const cardsData = rawCardsData.map(card => ({
 const CARD_WIDTH = 200
 const CARD_GAP = 20
 const CARD_SPACING = CARD_WIDTH + CARD_GAP
-const SWIPE_THRESHOLD = 50
+const SWIPE_THRESHOLD = 30
 const PASSCODE = 'Eliana'
 
 function getCookie(name) {
@@ -61,12 +61,12 @@ function App() {
   const handleCardClick = (cardId, index) => {
     if (hasSwiped) return
 
+    if (index !== activeIndex) return
+
     if (openCardId === cardId) {
       setOpenCardId(null)
-    } else if (index === activeIndex) {
-      setOpenCardId(cardId)
     } else {
-      setActiveIndex(index)
+      setOpenCardId(cardId)
     }
   }
 
